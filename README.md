@@ -25,14 +25,14 @@ mongorestore --archive=sampledata.archive --username ${MONGO_USER} --password ${
 
 Para poder navegar las bases de datos ingresar a la siguiente URL http://localhost:8081/
 
+## Software Recomendado
+
+[Atlas Cli](https://www.mongodb.com/try/download/atlascli)
+
 Opciones pagas:
 [DataGrip - Jetbrains](https://www.jetbrains.com/datagrip/features/mongodb/)
 
-<details>
-
-<summary>Filtros Simples</summary>
-
-### Filtros
+## Mostrar y Filtros colleciones
 
 Se pueden realizar filtros simples utilizando la función find() llamando a la collección.
 ```console
@@ -66,24 +66,30 @@ db.getCollection('users').find({
      });
 ```
 
-Filtros con operadores logicos mayor que ( > $gt)
-```console
-   db.accounts.find({ account_id: { $gt: 51080 } });
-```
+## Filtros y Proyecciones
 
-Filtros con operadores logicos mayor que ( >= $gte)
-```console
-   db.accounts.find({ account_id: { $gte: 51080 } });
-```
-
-Filtro con IN
-```console
-   db.accounts.find({ products: {$in: [ "CurrencyService" ] } });
-```
+<details>
+    <summary>Filtros Simples</summary>
+    
+    Filtros con operadores logicos mayor que ( > $gt)
+    ```console
+       db.accounts.find({ account_id: { $gt: 51080 } });
+    ```
+    
+    Filtros con operadores logicos mayor que ( >= $gte)
+    ```console
+       db.accounts.find({ account_id: { $gte: 51080 } });
+    ```
+    
+    Filtro con IN
+    ```console
+       db.accounts.find({ products: {$in: [ "CurrencyService" ] } });
+    ```
 </details>
 
 <details>
     <summary>Limitar Resultado</summary>
+
     ### Limitar el resultado
 
     Se utiliza la función Limit
@@ -93,13 +99,12 @@ Filtro con IN
     db.accounts.find().limit(20);
     ```
 
-> [!IMPORTANT]
-> Completar con un número positivo
+    > [!IMPORTANT]
+    > Completar con un número positivo
 </details>
 
 <details>
-    <summary>Limitar Resultado</summary>
-    ### Limitar el resultado
+    <summary>### Ordenamiento</summary>
 
     Para poder ordenar el resultado de documentos
 
@@ -116,6 +121,7 @@ Filtro con IN
 
 <details>
     <summary>Contar Registros</summary>
+
     ### Contar cantidad de Registros
 
     El count() está deprecado en las versiones más recientes de MongoDB, incluyendo MongoDB 5.0+ y MongoDB 8.0.
