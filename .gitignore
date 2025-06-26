@@ -1,0 +1,11 @@
+# Ignore local environment variables
+.env
+
+# Ignore temporary build directories
+build/
+dist/
+data/
+
+# Ignore Docker-related artifacts
+*.log
+docker-compose.override.yml
