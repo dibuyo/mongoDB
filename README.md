@@ -69,70 +69,71 @@ db.getCollection('users').find({
 ## Filtros y Proyecciones
 
 <details>
-    <summary>Filtros Simples</summary>
-    
-    Filtros con operadores logicos mayor que ( > $gt)
-    ```console
-       db.accounts.find({ account_id: { $gt: 51080 } });
-    ```
-    
-    Filtros con operadores logicos mayor que ( >= $gte)
-    ```console
-       db.accounts.find({ account_id: { $gte: 51080 } });
-    ```
-    
-    Filtro con IN
-    ```console
-       db.accounts.find({ products: {$in: [ "CurrencyService" ] } });
-    ```
+<summary>Filtros Simples</summary>
+
+Filtros con operadores logicos mayor que ( > $gt)
+```console
+   db.accounts.find({ account_id: { $gt: 51080 } });
+```
+
+Filtros con operadores logicos mayor que ( >= $gte)
+```console
+   db.accounts.find({ account_id: { $gte: 51080 } });
+```
+
+Filtro con IN
+```console
+   db.accounts.find({ products: {$in: [ "CurrencyService" ] } });
+```
 </details>
 
 <details>
-    <summary>Limitar Resultado</summary>
+<summary>Limitar Resultado</summary>
 
-    ### Limitar el resultado
+### Limitar el resultado
 
-    Se utiliza la función Limit
+Se utiliza la función Limit
 
-    Como por ejemplo Limitar el resultado a 20 documentos.
-    ```console
-    db.accounts.find().limit(20);
-    ```
+Como por ejemplo Limitar el resultado a 20 documentos.
+```console
+db.accounts.find().limit(20);
+```
 
-    > [!IMPORTANT]
-    > Completar con un número positivo
+> [!IMPORTANT]
+> Completar con un número positivo
 </details>
 
 <details>
-    <summary>### Ordenamiento</summary>
 
-    Para poder ordenar el resultado de documentos
+<summary>Ordenamiento</summary>
+
+### Para poder ordenar el resultado de documentos
 
     
-    ```javascript
-        { $sort: { <field1>: <sort order>, <field2>: <sort order> ... } }
-    ```
+```javascript
+    { $sort: { <field1>: <sort order>, <field2>: <sort order> ... } }
+```
 
-    Ordenar de forma creciente o ascendente por numero de cuenta.
-    ```console
-    db.accounts.find().sort({account_id: 1});
-    ```
+Ordenar de forma creciente o ascendente por numero de cuenta.
+```console
+db.accounts.find().sort({account_id: 1});
+```
 </details>
 
 <details>
-    <summary>Contar Registros</summary>
+<summary>Contar Registros</summary>
 
-    ### Contar cantidad de Registros
+### Contar cantidad de Registros
 
-    El count() está deprecado en las versiones más recientes de MongoDB, incluyendo MongoDB 5.0+ y MongoDB 8.0.
+El count() está deprecado en las versiones más recientes de MongoDB, incluyendo MongoDB 5.0+ y MongoDB 8.0.
 
-    Para poder contar con Filtros.
-    ```console
-    db.accounts.countDocuments({ products: {$in: [ "CurrencyService" ] } });
-    ```
+Para poder contar con Filtros.
+```console
+db.accounts.countDocuments({ products: {$in: [ "CurrencyService" ] } });
+```
 
-    Para poder contar todos los documentos sin importar el filtro.
-    ```console
-    db.accounts.estimatedDocumentCount();
-    ```
+Para poder contar todos los documentos sin importar el filtro.
+```console
+db.accounts.estimatedDocumentCount();
+```
 </details>
