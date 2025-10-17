@@ -20,8 +20,8 @@ async function main() {
         await client.connect();
         console.log("✅ Conectado a MongoDB");
 
-        const database = client.db('sample_db');
-        const collection = database.collection('mycollection');
+        const database = client.db('curso_db');
+        const collection = database.collection('personas');
 
         // Crear un documento
         const doc = { name: "Martín Rivas", age: 42, source: "javascript" };
