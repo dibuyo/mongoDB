@@ -24,7 +24,7 @@ async function main() {
         const collection = database.collection('mycollection');
 
         // Crear un documento
-        const doc = { name: "Martín Rivas", age: 42 };
+        const doc = { name: "Martín Rivas", age: 42, source: "javascript" };
         const insertResult = await collection.insertOne(doc);
         console.log(`📝 Documento insertado con _id: ${insertResult.insertedId}`);
 

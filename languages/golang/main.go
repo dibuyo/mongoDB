@@ -53,6 +53,7 @@ func main() {
 	doc := bson.D{
 		{Key: "name", Value: "Martín Rivas"},
 		{Key: "age", Value: 42},
+		{Key: "source", Value: "Go"},
 	}
 	insertResult, err := collection.InsertOne(context.TODO(), doc)
 	if err != nil {

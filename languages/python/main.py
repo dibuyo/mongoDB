@@ -27,7 +27,7 @@ def main():
         collection = db['mycollection']
 
         # Crear un documento
-        doc = { "name": "Martín Rivas", "age": 42 }
+        doc = { "name": "Martín Rivas", "age": 42, "source: "python" }
         insert_result = collection.insert_one(doc)
         print(f"📝 Documento insertado con _id: {insert_result.inserted_id}")
 
